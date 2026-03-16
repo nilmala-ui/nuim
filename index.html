@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="NuiM — Nil Mala, UI & Brand Designer. Premium digital experiences, brand identities, and visual systems." />
+  <title>NuiM — UI & Brand Designer by Nil Mala</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Custom Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursor-ring"></div>
+
+  <!-- ═══════════════════ NAV ═══════════════════ -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+
+      <!-- SVG Logo -->
+      <a href="#" class="nav-logo" aria-label="NuiM — Home">
+        <svg class="logo-svg" viewBox="0 0 104 38" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <polygon points="2,32 2,6 10,6 22,22 22,6 30,6 30,32 22,32 10,16 10,32" fill="url(#ng)"/>
+          <polygon points="2,6 14,6 30,26 30,32 18,32 2,12" fill="url(#ng2)" opacity="0.45"/>
+          <text x="32" y="28" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="22" fill="#1E1244">uiM</text>
+          <defs>
+            <linearGradient id="ng" x1="2" y1="6" x2="30" y2="32" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#5BB9F8"/>
+              <stop offset="50%" stop-color="#7C6FFF"/>
+              <stop offset="100%" stop-color="#5B2D9E"/>
+            </linearGradient>
+            <linearGradient id="ng2" x1="2" y1="6" x2="30" y2="32" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#A8D8FF"/>
+              <stop offset="100%" stop-color="#7C6FFF"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </a>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#work" class="nav-link">Work</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <a href="#contact" class="nav-cta">Let's talk</a>
+
+      <!-- Dark mode toggle -->
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+        <span class="toggle-track">
+          <span class="toggle-thumb"></span>
+        </span>
+        <svg class="toggle-sun" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        <svg class="toggle-moon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+      </button>
+
+      <button class="nav-burger" id="nav-burger" aria-label="Toggle menu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <ul>
+      <li><a href="#work"     class="mob-link" data-n="01">Work</a></li>
+      <li><a href="#about"    class="mob-link" data-n="02">About</a></li>
+      <li><a href="#services" class="mob-link" data-n="03">Services</a></li>
+      <li><a href="#contact"  class="mob-link" data-n="04">Contact</a></li>
+    </ul>
+    <div class="mob-footer">hello@nuim.design</div>
+  </div>
+
+  <main>
+
+    <!-- ═══════════════════ HERO ═══════════════════ -->
+    <section class="hero" id="hero">
+
+      <!-- Blob backgrounds -->
+      <div class="blob blob-1" aria-hidden="true"></div>
+      <div class="blob blob-2" aria-hidden="true"></div>
+      <div class="blob blob-3" aria-hidden="true"></div>
+
+      <div class="hero-inner">
+        <div class="hero-content">
+
+          <div class="hero-badge" data-anim>
+            <span class="badge-dot"></span>
+            Available for new projects
+          </div>
+
+          <h1 class="hero-title" data-anim>
+            Premium<br/>
+            <span class="gradient-text">Digital</span><br/>
+            Experiences.
+          </h1>
+
+          <p class="hero-sub" data-anim>
+            I'm <strong>Nil Mala</strong> — the designer behind <strong>NuiM</strong>. Brands, interfaces, visual systems. Work that holds up when you look twice.
+          </p>
+
+          <div class="hero-actions" data-anim>
+            <a href="#work" class="btn btn-primary">
+              View my work
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </a>
+            <a href="#contact" class="btn btn-outline">Get in touch</a>
+          </div>
+
+          <div class="hero-stats" data-anim>
+            <div class="stat">
+              <span class="stat-n" data-count="8">8+</span>
+              <span class="stat-l">Years</span>
+            </div>
+            <div class="stat-sep"></div>
+            <div class="stat">
+              <span class="stat-n" data-count="120">120+</span>
+              <span class="stat-l">Projects</span>
+            </div>
+            <div class="stat-sep"></div>
+            <div class="stat">
+              <span class="stat-n" data-count="50">50+</span>
+              <span class="stat-l">Clients</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual" data-anim>
+          <div class="hero-img-wrap">
+            <img src="assets/nuim_hero_mockup.png" alt="NuiM UI Design — Dashboard and mobile app mockup" />
+          </div>
+          <!-- Floating chips -->
+          <div class="chip chip-1">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 2l1.5 4.5H14l-3.7 2.7 1.4 4.3L8 10.8l-3.7 2.7 1.4-4.3L2 6.5h4.5z" fill="url(#cs)"/><defs><linearGradient id="cs" x1="2" y1="2" x2="14" y2="14"><stop stop-color="#5BB9F8"/><stop offset="1" stop-color="#7C6FFF"/></linearGradient></defs></svg>
+            Brand Identity
+          </div>
+          <div class="chip chip-2">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="2" width="12" height="12" rx="2" fill="url(#cu)"/><defs><linearGradient id="cu" x1="2" y1="2" x2="14" y2="14"><stop stop-color="#7C6FFF"/><stop offset="1" stop-color="#5B2D9E"/></linearGradient></defs></svg>
+            UI / UX Design
+          </div>
+          <div class="chip chip-3">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" fill="url(#cm)"/><defs><linearGradient id="cm" x1="2" y1="2" x2="14" y2="14"><stop stop-color="#5BB9F8"/><stop offset="1" stop-color="#5B2D9E"/></linearGradient></defs></svg>
+            Motion Design
+          </div>
+        </div>
+      </div>
+
+      <div class="scroll-hint">
+        <div class="scroll-track"><div class="scroll-thumb"></div></div>
+        <span>Scroll to explore</span>
+      </div>
+    </section>
+
+    <!-- ═══════════════════ MARQUEE ═══════════════════ -->
+    <div class="marquee-wrap">
+      <div class="marquee-inner" id="marquee-inner">
+        <span>Brand Identity</span><span class="m-dot">·</span>
+        <span>UI System Design</span><span class="m-dot">·</span>
+        <span>Motion Graphics</span><span class="m-dot">·</span>
+        <span>Design Systems</span><span class="m-dot">·</span>
+        <span>Print & Editorial</span><span class="m-dot">·</span>
+        <span>Visual Strategy</span><span class="m-dot">·</span>
+        <span>Packaging</span><span class="m-dot">·</span>
+        <span>Typography</span><span class="m-dot">·</span>
+        <!-- dupe -->
+        <span>Brand Identity</span><span class="m-dot">·</span>
+        <span>UI System Design</span><span class="m-dot">·</span>
+        <span>Motion Graphics</span><span class="m-dot">·</span>
+        <span>Design Systems</span><span class="m-dot">·</span>
+        <span>Print & Editorial</span><span class="m-dot">·</span>
+        <span>Visual Strategy</span><span class="m-dot">·</span>
+        <span>Packaging</span><span class="m-dot">·</span>
+        <span>Typography</span><span class="m-dot">·</span>
+      </div>
+    </div>
+
+    <!-- ═══════════════════ WORK ═══════════════════ -->
+    <section class="work" id="work">
+      <div class="section-intro" data-reveal>
+        <div>
+          <span class="eyebrow">Selected Work</span>
+          <h2 class="section-title">Projects I'm<br/><em>proud of.</em></h2>
+        </div>
+        <p class="section-desc">A handful of projects I'd talk about at 2am. Real briefs, real constraints, real results.</p>
+      </div>
+
+      <div class="work-grid">
+
+        <article class="wcard wcard--wide" data-reveal tabindex="0">
+          <div class="wcard-img">
+            <img src="assets/project1_branding.png" alt="Brand Identity Project" loading="lazy" />
+            <div class="wcard-hover">View Case Study →</div>
+          </div>
+          <div class="wcard-body">
+            <div class="wcard-tags">
+              <span class="tag">Brand Identity</span>
+              <span class="tag">Print</span>
+              <span class="wcard-yr">2024</span>
+            </div>
+            <h3 class="wcard-title">Axiom Architects</h3>
+            <p class="wcard-desc">End-to-end brand identity for an emerging architecture firm — from wordmark to a full visual system.</p>
+          </div>
+        </article>
+
+        <article class="wcard" data-reveal tabindex="0">
+          <div class="wcard-img">
+            <img src="assets/nuim_hero_mockup.png" alt="Dashboard UI Design" loading="lazy" />
+            <div class="wcard-hover">View Case Study →</div>
+          </div>
+          <div class="wcard-body">
+            <div class="wcard-tags">
+              <span class="tag">UI/UX</span>
+              <span class="tag">Dashboard</span>
+              <span class="wcard-yr">2024</span>
+            </div>
+            <h3 class="wcard-title">NuiM Dashboard</h3>
+            <p class="wcard-desc">Data-rich analytics platform kept clean and scannable with a glassmorphism design system.</p>
+          </div>
+        </article>
+
+        <article class="wcard" data-reveal tabindex="0">
+          <div class="wcard-img">
+            <img src="assets/project3_poster.png" alt="Poster design series" loading="lazy" />
+            <div class="wcard-hover">View Case Study →</div>
+          </div>
+          <div class="wcard-body">
+            <div class="wcard-tags">
+              <span class="tag">Print</span>
+              <span class="tag">Poster</span>
+              <span class="wcard-yr">2023</span>
+            </div>
+            <h3 class="wcard-title">Sonic Textures</h3>
+            <p class="wcard-desc">Event poster series using risograph techniques — three prints, all sold out within 72 hours.</p>
+          </div>
+        </article>
+
+        <article class="wcard wcard--accent" data-reveal tabindex="0">
+          <div class="wcard-body wcard-body--cta">
+            <span class="eyebrow">Your project next?</span>
+            <h3 class="wcard-cta-title">You'll be sharing your own<br/>real portfolio soon.</h3>
+            <p>Replace these placeholder cards with your actual work whenever you're ready.</p>
+            <a href="#contact" class="btn btn-primary btn-sm">Start a project →</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════ ABOUT ═══════════════════ -->
+    <section class="about" id="about">
+      <div class="about-inner">
+
+        <div class="about-img-col" data-reveal>
+          <div class="about-img-wrap">
+            <img src="assets/nuim_workspace.png" alt="Nil Mala's design studio — NuiM" loading="lazy" />
+          </div>
+          <!-- Brand name breakdown card -->
+          <div class="brand-card" data-reveal>
+            <p class="brand-card-label">The name decoded</p>
+            <div class="brand-rows">
+              <div class="brand-row">
+                <span class="brand-letter" style="background: linear-gradient(135deg,#5BB9F8,#7C6FFF)">N</span>
+                <div>
+                  <strong>Nil</strong>
+                  <span>My name. My perspective.</span>
+                </div>
+              </div>
+              <div class="brand-row">
+                <span class="brand-letter brand-letter--ui" style="background: linear-gradient(135deg,#7C6FFF,#9B59F5)">ui</span>
+                <div>
+                  <strong>ui</strong>
+                  <span>My craft. My obsession.</span>
+                </div>
+              </div>
+              <div class="brand-row">
+                <span class="brand-letter" style="background: linear-gradient(135deg,#5B2D9E,#1E1244)">M</span>
+                <div>
+                  <strong>Mala</strong>
+                  <span>My roots. My identity.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-content" data-reveal>
+          <span class="eyebrow">About Nil Mala</span>
+          <h2 class="section-title about-h2">Design is a<br/>conversation. I just<br/><em>happen to listen.</em></h2>
+
+          <div class="about-paras">
+            <p>Logo sketches in school notebooks. Brand audits on Post-its. Figma prototypes at midnight. The medium keeps changing — the fixation never does.</p>
+            <p>NuiM sits at the sharp edge of <strong>brand strategy</strong>, <strong>visual identity</strong> and <strong>digital product design</strong>. I keep the process messy on purpose — clarity comes later, and it's always worth the mess.</p>
+            <p>The goal isn't a deliverable. It's the moment your customer sees your work and doesn't need to think — they just get it.</p>
+          </div>
+
+          <div class="tools-block">
+            <span class="tools-label">Tools I use daily</span>
+            <div class="tools-chips">
+              <span>Figma</span><span>Illustrator</span><span>Photoshop</span>
+              <span>After Effects</span><span>Procreate</span><span>Framer</span>
+            </div>
+          </div>
+
+          <a href="#contact" class="btn btn-primary">Start a project →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════ SERVICES ═══════════════════ -->
+    <section class="services" id="services">
+      <div class="section-intro" data-reveal>
+        <div>
+          <span class="eyebrow">What I Do</span>
+          <h2 class="section-title">Capabilities</h2>
+        </div>
+        <p class="section-desc">Sketch to final export, I hold the whole thing. No handoffs to a junior. No templated shortcuts.</p>
+      </div>
+
+      <div class="services-grid">
+
+        <div class="svc-card" data-reveal>
+          <div class="svc-icon">
+            <svg viewBox="0 0 40 40" fill="none">
+              <circle cx="20" cy="20" r="16" stroke="url(#sg1)" stroke-width="1.5"/>
+              <circle cx="20" cy="20" r="5" fill="url(#sg1)"/>
+              <path d="M20 4v4M20 32v4M4 20h4M32 20h4" stroke="url(#sg1)" stroke-width="1.5" stroke-linecap="round"/>
+              <defs><linearGradient id="sg1" x1="4" y1="4" x2="36" y2="36"><stop stop-color="#5BB9F8"/><stop offset="1" stop-color="#7C6FFF"/></linearGradient></defs>
+            </svg>
+          </div>
+          <span class="svc-num">01</span>
+          <h3 class="svc-title">Brand Identity</h3>
+          <p class="svc-desc">Logo systems, colour palettes and guidelines built to outlast trends — scalable from a business card to a Times Square billboard.</p>
+          <ul class="svc-list">
+            <li>Logo & Wordmark Design</li>
+            <li>Brand Guidelines</li>
+            <li>Stationery & Collateral</li>
+            <li>Brand Audits & Strategy</li>
+          </ul>
+        </div>
+
+        <div class="svc-card" data-reveal>
+          <div class="svc-icon">
+            <svg viewBox="0 0 40 40" fill="none">
+              <rect x="4" y="6" width="32" height="24" rx="3" stroke="url(#sg2)" stroke-width="1.5"/>
+              <path d="M13 30l-3 4h20l-3-4" stroke="url(#sg2)" stroke-width="1.5" stroke-linecap="round"/>
+              <rect x="10" y="13" width="8" height="6" rx="1" fill="url(#sg2)" opacity=".5"/>
+              <rect x="22" y="12" width="10" height="3" rx="1" fill="url(#sg2)" opacity=".5"/>
+              <rect x="22" y="18" width="10" height="3" rx="1" fill="url(#sg2)" opacity=".5"/>
+              <defs><linearGradient id="sg2" x1="4" y1="6" x2="36" y2="30"><stop stop-color="#5BB9F8"/><stop offset="1" stop-color="#7C6FFF"/></linearGradient></defs>
+            </svg>
+          </div>
+          <span class="svc-num">02</span>
+          <h3 class="svc-title">UI / Product Design</h3>
+          <p class="svc-desc">Screens that don't make people think too hard. From rough wireframes to the kind of prototype that sells itself in a client demo.</p>
+          <ul class="svc-list">
+            <li>UX Research & Strategy</li>
+            <li>Wireframing & Prototyping</li>
+            <li>Design Systems</li>
+            <li>Developer Handoff</li>
+          </ul>
+        </div>
+
+        <div class="svc-card" data-reveal>
+          <div class="svc-icon">
+            <svg viewBox="0 0 40 40" fill="none">
+              <rect x="6" y="6" width="28" height="28" rx="2" stroke="url(#sg3)" stroke-width="1.5"/>
+              <path d="M6 16h28M16 6v28" stroke="url(#sg3)" stroke-width="1.5"/>
+              <path d="M21 21l5-5M24 21l-4 4" stroke="url(#sg3)" stroke-width="1.5" stroke-linecap="round"/>
+              <defs><linearGradient id="sg3" x1="6" y1="6" x2="34" y2="34"><stop stop-color="#7C6FFF"/><stop offset="1" stop-color="#5B2D9E"/></linearGradient></defs>
+            </svg>
+          </div>
+          <span class="svc-num">03</span>
+          <h3 class="svc-title">Print & Editorial</h3>
+          <p class="svc-desc">The kind of print work people keep instead of recycle — posters, editorial layouts and packaging with actual craft behind them.</p>
+          <ul class="svc-list">
+            <li>Poster & Print Series</li>
+            <li>Packaging Design</li>
+            <li>Magazine Layout</li>
+            <li>Signage Systems</li>
+          </ul>
+        </div>
+
+        <div class="svc-card" data-reveal>
+          <div class="svc-icon">
+            <svg viewBox="0 0 40 40" fill="none">
+              <path d="M6 34l8-14 8 8 8-16 8 10" stroke="url(#sg4)" stroke-width="1.5" stroke-linecap="round"/>
+              <circle cx="14" cy="20" r="2" fill="url(#sg4)"/>
+              <circle cx="22" cy="28" r="2" fill="url(#sg4)"/>
+              <circle cx="30" cy="12" r="2" fill="url(#sg4)"/>
+              <defs><linearGradient id="sg4" x1="6" y1="6" x2="38" y2="38"><stop stop-color="#5BB9F8"/><stop offset="1" stop-color="#5B2D9E"/></linearGradient></defs>
+            </svg>
+          </div>
+          <span class="svc-num">04</span>
+          <h3 class="svc-title">Motion & Animation</h3>
+          <p class="svc-desc">Still design that breathes. Logo reveals, UI transitions and social content that makes people watch twice.</p>
+          <ul class="svc-list">
+            <li>Logo Animation</li>
+            <li>UI Micro-interactions</li>
+            <li>Social Motion Content</li>
+            <li>Motion Brand Guidelines</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════ PROCESS ═══════════════════ -->
+    <section class="process">
+      <div class="process-inner">
+        <div class="process-left" data-reveal>
+          <span class="eyebrow">How NuiM Works</span>
+          <h2 class="section-title">Four steps.<br/><em>Zero filler.</em></h2>
+          <p class="process-sub">Every project is different. The rigour isn't. Here's how I think through the work — from first call to final export.</p>
+        </div>
+
+        <div class="process-steps">
+          <div class="pstep" data-reveal>
+            <div class="pstep-num">01</div>
+            <div class="pstep-body">
+              <h3>Dig In</h3>
+              <p>I read the brief three times before I respond. Then I send back better questions. Who is this really for? What would killing it look like in two years? The work gets good here, before anything is drawn.</p>
+            </div>
+          </div>
+          <div class="pstep" data-reveal>
+            <div class="pstep-num">02</div>
+            <div class="pstep-body">
+              <h3>Make a Mess</h3>
+              <p>Paper first. I sketch until I find directions worth showing, then I show them — including the ones that surprise me. Two or three routes, no single answer handed down from on high.</p>
+            </div>
+          </div>
+          <div class="pstep" data-reveal>
+            <div class="pstep-num">03</div>
+            <div class="pstep-body">
+              <h3>Get Obsessive</h3>
+              <p>One direction earns the deep work. I'll adjust a letterform ten times and keep the eleventh. Every pixel has a reason. I can argue for it in plain English if asked.</p>
+            </div>
+          </div>
+          <div class="pstep" data-reveal>
+            <div class="pstep-num">04</div>
+            <div class="pstep-body">
+              <h3>Hand It Over Right</h3>
+              <p>Organised files, a clear brand guide, a walkthrough, and 30 days of follow-up access. You shouldn't need me to use what I made you — but I'm there if you do.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════ TESTIMONIALS ═══════════════════ -->
+    <section class="testimonials">
+      <div class="test-inner">
+        <div class="section-intro" data-reveal>
+          <div>
+            <span class="eyebrow">Kind Words</span>
+            <h2 class="section-title">What clients say</h2>
+          </div>
+        </div>
+
+        <div class="test-slider" id="test-slider">
+          <!-- Cards stack — only active is shown -->
+          <div class="test-card active" id="tc-0">
+            <div class="test-quote">"</div>
+            <p class="test-text">Nil took a brand direction we'd been going back and forth on for months and made it obvious. The guidelines he delivered are thorough enough that even our non-designers use them confidently. Six months in and I'm still getting compliments.</p>
+            <div class="test-author">
+              <div class="test-av" style="background: linear-gradient(135deg,#5BB9F8,#7C6FFF)">EF</div>
+              <div class="test-author-info">
+                <strong>Eleanor Finch</strong>
+                <span>Founder, Axiom Architects</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="test-card" id="tc-1">
+            <div class="test-quote">"</div>
+            <p class="test-text">NuiM wasn't just a design hire — Nil caught UX problems we'd been shipping around for two years. Churn dropped 18% in the first quarter after launch. That's not a coincidence.</p>
+            <div class="test-author">
+              <div class="test-av" style="background: linear-gradient(135deg,#7C6FFF,#5B2D9E)">MK</div>
+              <div class="test-author-info">
+                <strong>Marcus Kane</strong>
+                <span>CEO, FinTrack</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="test-card" id="tc-2">
+            <div class="test-quote">"</div>
+            <p class="test-text">I sent a vague brief and got back a poster series that felt like it came from inside my own head. Nil asked the questions I hadn't thought to answer. All three prints sold out in under 72 hours.</p>
+            <div class="test-author">
+              <div class="test-av" style="background: linear-gradient(135deg,#5BB9F8,#5B2D9E)">SR</div>
+              <div class="test-author-info">
+                <strong>Sofia Reyes</strong>
+                <span>Director, Concrete Hall</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="test-controls">
+            <button class="test-btn" id="test-prev" aria-label="Previous">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12 4l-6 6 6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </button>
+            <div class="test-dots" id="test-dots">
+              <button class="tdot active" data-i="0"></button>
+              <button class="tdot" data-i="1"></button>
+              <button class="tdot" data-i="2"></button>
+            </div>
+            <button class="test-btn" id="test-next" aria-label="Next">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M8 4l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════ CONTACT ═══════════════════ -->
+    <section class="contact" id="contact">
+      <div class="blob blob-c1" aria-hidden="true"></div>
+      <div class="blob blob-c2" aria-hidden="true"></div>
+
+      <div class="contact-inner">
+        <div class="contact-left" data-reveal>
+          <span class="eyebrow">Let's Work Together</span>
+          <h2 class="contact-title">Got a project?<br/><em>Don't hold back.</em></h2>
+          <p class="contact-sub">I keep the client list short on purpose — every project gets proper time. Drop a line and I'll reply within 24 hours.</p>
+
+          <a href="mailto:hello@nuim.design" class="contact-email">hello@nuim.design</a>
+
+          <div class="socials">
+            <a href="#" class="social" aria-label="Dribbble">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72M10.48 21.97c1.72-5.57 3.71-8.72 7.02-12.61"/><path d="M2.06 9.39c6.09.47 9.26 1.11 15.57 3.61"/></svg>
+            </a>
+            <a href="#" class="social" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+            </a>
+            <a href="#" class="social" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="3"/><path d="M7 10v7M7 7v.01M11 10v7M11 13a3 3 0 016 0v4"/></svg>
+            </a>
+            <a href="#" class="social" aria-label="Behance">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6h6c2 0 3 1 3 2.5S12 11 10 11H4V6z"/><path d="M4 11h7c2 0 3.5 1 3.5 3S12.5 17 10 17H4v-6z"/><path d="M14 8h6M14 13.5h6c0 2-1.5 3.5-3 3.5a3.5 3.5 0 010-7c1.5 0 2.5.75 3 1.5"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <form class="contact-form" id="contact-form" data-reveal>
+          <div class="fg">
+            <label for="fn">Your name</label>
+            <input type="text" id="fn" name="name" placeholder="Jane Smith" required />
+          </div>
+          <div class="fg">
+            <label for="fe">Email address</label>
+            <input type="email" id="fe" name="email" placeholder="jane@company.com" required />
+          </div>
+          <div class="fg">
+            <label for="fp">Project type</label>
+            <select id="fp" name="project">
+              <option value="">What are you looking for?</option>
+              <option value="brand">Brand Identity</option>
+              <option value="ui">UI / Product Design</option>
+              <option value="print">Print & Editorial</option>
+              <option value="motion">Motion & Animation</option>
+              <option value="other">Something else</option>
+            </select>
+          </div>
+          <div class="fg">
+            <label for="fm">Tell me about it</label>
+            <textarea id="fm" name="message" rows="5" placeholder="Describe your project, timeline and budget..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full" id="contact-sub">
+            Send message
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </button>
+          <p class="form-note">No spam, ever. Your info stays with NuiM.</p>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════ FOOTER ═══════════════════ -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <svg class="logo-svg footer-logo" viewBox="0 0 104 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="2,32 2,6 10,6 22,22 22,6 30,6 30,32 22,32 10,16 10,32" fill="url(#fng)"/>
+          <polygon points="2,6 14,6 30,26 30,32 18,32 2,12" fill="url(#fng2)" opacity="0.45"/>
+          <text x="32" y="28" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="22" fill="#fff">uiM</text>
+          <defs>
+            <linearGradient id="fng" x1="2" y1="6" x2="30" y2="32" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#5BB9F8"/><stop offset="50%" stop-color="#7C6FFF"/><stop offset="100%" stop-color="#5B2D9E"/>
+            </linearGradient>
+            <linearGradient id="fng2" x1="2" y1="6" x2="30" y2="32" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#A8D8FF"/><stop offset="100%" stop-color="#7C6FFF"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <p>Designed by Nil Mala — where <strong>N</strong> meets <strong>M</strong>,<br/>through the craft of <span class="grad-word">ui</span>. Available Worldwide.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="fcol">
+          <span class="fcol-title">Navigate</span>
+          <a href="#work">Work</a>
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="fcol">
+          <span class="fcol-title">Social</span>
+          <a href="#">Dribbble</a>
+          <a href="#">Instagram</a>
+          <a href="#">LinkedIn</a>
+          <a href="#">Behance</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 NuiM Studio — Nil Mala. All rights reserved.</p>
+      <p>Built with obsession, not templates.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
