@@ -7,27 +7,118 @@
 const $ = s => document.querySelector(s);
 const $$ = s => [...document.querySelectorAll(s)];
 
-// ── Custom Cursor ──────────────────────────────────
+// ── Project Modal Data ──────────────────────────
+// Add new projects here by duplicating an entry
+const PROJECTS = {
+  'nuim-brand': {
+    title:  'NuiM — Personal Brand',
+    desc:   'Geometric identity, full design system, UI kit and digital applications — built from scratch for the studio.',
+    tags:   ['Brand Identity', 'UI Design', 'Design System', '2024'],
+    images: [
+      { src: 'assets/nuim_stationery.png',      caption: 'Brand Stationery Set' },
+      { src: 'assets/nuim_brand_guidelines.png', caption: 'Style Guide & Guidelines' },
+      { src: 'assets/nuim_brand_digital.png',    caption: 'Digital & Motion Applications' },
+      { src: 'assets/nuim_hero_mockup.png',      caption: 'Device Ecosystem Mockup' },
+      { src: 'assets/nuim_workspace.png',        caption: 'Workspace & Process' },
+      { src: 'assets/nuim_project_brand.png',    caption: 'Project Brand Visual' },
+      { src: 'assets/about_artwork.png',         caption: 'Brand Applied' },
+      { src: 'assets/hero_artwork.png',          caption: 'Hero Artwork' },
+    ],
+  },
+};
+
+// ── Project Modal UI ───────────────────────────
 (function () {
-  const dot  = $('#cursor');
-  const ring = $('#cursor-ring');
-  if (!dot || window.matchMedia('(pointer:coarse)').matches) return;
+  const pm       = $('#pm');
+  const backdrop = $('#pm-backdrop');
+  const closeBtn = $('#pm-close');
+  const stageImg = $('#pm-stage-img');
+  const prevBtn  = $('#pm-stage-prev');
+  const nextBtn  = $('#pm-stage-next');
+  const counter  = $('#pm-stage-counter');
+  const strip    = $('#pm-strip');
+  const titleEl  = $('#pm-title');
+  const descEl   = $('#pm-desc');
+  const tagsEl   = $('#pm-tags');
+  if (!pm) return;
 
-  let mx = -200, my = -200, rx = -200, ry = -200;
+  let images = [], cur = 0;
 
-  document.addEventListener('mousemove', e => {
-    mx = e.clientX; my = e.clientY;
-    dot.style.left = mx + 'px'; dot.style.top = my + 'px';
+  function buildStrip(imgs) {
+    strip.innerHTML = '';
+    imgs.forEach((img, i) => {
+      const th = document.createElement('div');
+      th.className = 'pm-thumb' + (i === 0 ? ' active' : '');
+      th.innerHTML = `<img src="${img.src}" alt="${img.caption || ''}" loading="lazy">`;
+      th.addEventListener('click', () => goTo(i));
+      strip.appendChild(th);
+    });
+  }
+
+  function goTo(idx) {
+    cur = ((idx % images.length) + images.length) % images.length;
+    // Swap stage image
+    stageImg.style.animation = 'none';
+    stageImg.offsetHeight; // reflow
+    stageImg.style.animation = '';
+    stageImg.src = images[cur].src;
+    stageImg.alt = images[cur].caption || '';
+    counter.textContent = `${cur + 1} / ${images.length}`;
+    // Update filmstrip
+    $$('.pm-thumb').forEach((t, i) => t.classList.toggle('active', i === cur));
+    // Scroll active thumb into view
+    const active = strip.querySelectorAll('.pm-thumb')[cur];
+    if (active) active.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+  }
+
+  function openProject(key) {
+    const data = PROJECTS[key];
+    if (!data) return;
+    images = data.images;
+    cur = 0;
+    titleEl.textContent = data.title;
+    descEl.textContent  = data.desc;
+    tagsEl.innerHTML    = data.tags.map(t => `<span class="tag">${t}</span>`).join('');
+    buildStrip(images);
+    stageImg.src = images[0].src;
+    stageImg.alt = images[0].caption || '';
+    counter.textContent = `1 / ${images.length}`;
+    pm.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    pm.classList.remove('open');
+    document.body.style.overflow = '';
+    setTimeout(() => { stageImg.src = ''; }, 520);
+  }
+
+  // Open on work card click
+  $$('[data-project]').forEach(card => {
+    card.style.cursor = 'pointer';
+    card.addEventListener('click', () => openProject(card.dataset.project));
+    card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openProject(card.dataset.project); } });
   });
-  (function follow() {
-    rx += (mx - rx) * 0.13; ry += (my - ry) * 0.13;
-    ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
-    requestAnimationFrame(follow);
-  })();
 
-  $$('a,button,[tabindex],.wcard').forEach(el => {
-    el.addEventListener('mouseenter', () => document.body.classList.add('cursor-over'));
-    el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-over'));
+  closeBtn.addEventListener('click', closeModal);
+  backdrop.addEventListener('click', closeModal);
+  prevBtn.addEventListener('click', () => goTo(cur - 1));
+  nextBtn.addEventListener('click', () => goTo(cur + 1));
+
+  // Keyboard
+  document.addEventListener('keydown', e => {
+    if (!pm.classList.contains('open')) return;
+    if (e.key === 'Escape')      closeModal();
+    if (e.key === 'ArrowLeft')   goTo(cur - 1);
+    if (e.key === 'ArrowRight')  goTo(cur + 1);
+  });
+
+  // Touch swipe on stage
+  let sx = 0;
+  stageImg.addEventListener('touchstart', e => { sx = e.touches[0].clientX; }, { passive: true });
+  stageImg.addEventListener('touchend',   e => {
+    const dx = e.changedTouches[0].clientX - sx;
+    if (Math.abs(dx) > 44) goTo(dx < 0 ? cur + 1 : cur - 1);
   });
 })();
 
@@ -160,19 +251,6 @@ window.addEventListener('load', () => {
   });
 })();
 
-// ── Work card tilt ─────────────────────────────────
-(function () {
-  if (window.matchMedia('(pointer:coarse)').matches) return;
-  $$('.wcard').forEach(c => {
-    c.addEventListener('mousemove', e => {
-      const r = c.getBoundingClientRect();
-      const x = (e.clientX - r.left) / r.width  - .5;
-      const y = (e.clientY - r.top)  / r.height - .5;
-      c.style.transform = `translateY(-6px) rotateX(${-y*5}deg) rotateY(${x*5}deg)`;
-    });
-    c.addEventListener('mouseleave', () => { c.style.transform = ''; });
-  });
-})();
 
 // ── Smooth anchors ─────────────────────────────────
 $$('a[href^="#"]').forEach(a => a.addEventListener('click', e => {
