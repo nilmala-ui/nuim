@@ -300,7 +300,7 @@ body.dark .logo-text { fill: #ffffff; }
 .hero-img-wrap {
   border-radius: 20px; overflow: hidden;
   box-shadow: var(--shadow-lg);
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 16 / 10;
   border: 1px solid rgba(124,111,255,0.1);
   background: linear-gradient(135deg, #c8dcff 0%, #e0d8ff 100%);
 }
